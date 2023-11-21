@@ -20,14 +20,15 @@ def main():
 
 
 
-        x = tmr%1600
+        x = tmr%3200
         screen.blit(bg_img, [-x, 0])
         screen.blit(pg.transform.flip(bg_img, True, False), [1600-x, 0])
+        screen.blit(bg_img, [3200-x, 0])
 
         screen.blit(bardList[tmr%len(bardList)], [300, 200])
         pg.display.update()
         tmr += 1        
-        clock.tick(100)
+        clock.tick(10000)
 
 
 if __name__ == "__main__":
