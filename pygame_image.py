@@ -11,7 +11,7 @@ def main():
     bard = pg.image.load("ex01/fig/3.png")
     bard = pg.transform.flip(bard, True, False)
 
-    bardList = {bard, pg.transform.rotozoom(bard,10, 1.0)}
+    bardList = [bard, pg.transform.rotozoom(bard,10, 1.0)]
 
     tmr = 0
     while True:
@@ -19,6 +19,8 @@ def main():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0])
+
+        screen.blit(bardList[tmr%2], [300, 200])
         pg.display.update()
         tmr += 1        
         clock.tick(10)
